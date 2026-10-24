@@ -1,0 +1,8 @@
+# portfolio = account-management offers (e.g. limit increase); usage = card-usage promos.
+# Priority: portfolio campaigns are evaluated before usage campaigns on the same day.
+campaigns:
+  - {id: P-LIMIT, type: portfolio, channel: sms,   start_day: 0, end_day: 55, send_every_days: 7, segments: [A, B]}
+  - {id: P-BT,    type: portfolio, channel: email, start_day: 7, end_day: 55, send_every_days: 7, segments: [B, C]}
+  - {id: U-PROMO, type: usage,     channel: sms,   start_day: 0, end_day: 55, send_every_days: 3, segments: [A, B, C]}
+  - {id: U-NUDGE, type: usage,     channel: push,  start_day: 0, end_day: 55, send_every_days: 2, segments: [A, B, C]}
+  - {id: U-EMAIL, type: usage,     channel: email, start_day: 0, end_day: 55, send_every_days: 3, segments: [A, C]}

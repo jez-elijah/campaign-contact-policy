@@ -1,0 +1,18 @@
+# Contact Policy for the SYNTHETIC "Example Bank" campaign simulation.
+# All values are illustrative and invented for this project.
+version: 1
+rules:
+  require_consent: true
+  complaint_cooldown_days: 30
+  quiet_hours: {start: 21, end: 8}      # no contact from 21:00 up to 08:00
+  min_gap_days: 2                        # between any two contacts to a customer
+  channel_caps:
+    sms:   {per_week: 1, per_month: 3}
+    email: {per_week: 2, per_month: 6}
+    push:  {per_week: 3, per_month: 10}
+  max_contacts_per_week_all_channels: 3
+monitoring:                              # alert thresholds, evaluated per simulated week
+  max_opt_out_rate: 0.010
+  max_complaint_rate: 0.002
+  min_response_rate: 0.040
+  max_suppression_rate: 0.600
